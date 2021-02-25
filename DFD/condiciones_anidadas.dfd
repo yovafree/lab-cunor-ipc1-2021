@@ -1,0 +1,82 @@
+ Dfd (c)
+1
+1
+1
+0
+0
+6
+3
+4
+num1
+1
+6
+4
+num2
+1
+9
+4
+num3
+2
+10
+4
+1
+26
+'Ingrese el valor de num1'
+5
+1
+4
+num1
+4
+1
+26
+'Ingrese el valor de num2'
+5
+1
+4
+num2
+4
+1
+26
+'Ingrese el valor de num3'
+5
+1
+4
+num3
+7
+0
+1
+9
+num1>num2
+7
+0
+1
+9
+num2>num3
+4
+1
+20
+'El mayor es ', num3
+13
+4
+1
+20
+'El mayor es ', num2
+13
+13
+7
+0
+1
+9
+num1>num3
+4
+1
+20
+'El mayor es ', num3
+13
+4
+1
+20
+'El mayor es ', num1
+13
+13
+1
