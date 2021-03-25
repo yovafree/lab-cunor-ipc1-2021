@@ -11,7 +11,7 @@ import java.util.Scanner;
  * Registrar un listado de estudiantes
  * @author erwin
  */
-public class Ejemplo10 {
+public class Ejemplo10 { 
     static int op = 0;
     
     static int contador = 0;
