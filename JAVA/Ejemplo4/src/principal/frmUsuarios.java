@@ -183,13 +183,13 @@ public class frmUsuarios extends javax.swing.JFrame {
 
         DefaultTableModel tableModel = new DefaultTableModel(col, 0);
         
-        tblUsuarios = new JTable(tableModel);
-        
         for(Usuario item:lstUsuarios){
             Object[] objs = {item.getDpi(), item.getNombres(), item.getApellidos(), item.getDireccion()};
             
             tableModel.addRow(objs);
         }
+        
+        tblUsuarios.setModel(tableModel);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
