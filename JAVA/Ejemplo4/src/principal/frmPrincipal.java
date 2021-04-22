@@ -39,6 +39,7 @@ public class frmPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 204));
+        setPreferredSize(new java.awt.Dimension(600, 253));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton1.setText("Aceptar");
@@ -87,7 +88,7 @@ public class frmPrincipal extends javax.swing.JFrame {
                             .addComponent(jLabel1)
                             .addGap(18, 18, 18)
                             .addComponent(txtNum1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,8 +119,8 @@ public class frmPrincipal extends javax.swing.JFrame {
             int num2 = Integer.parseInt(txtNum2.getText());
             int num3 = Integer.parseInt(txtNum3.getText());
 
-            int resu = num1+num2 + num3;       
-
+            int resu = num1+num2 + num3; 
+            
             JOptionPane.showMessageDialog(this, "La sumatoria es: " + resu);
         }else
             JOptionPane.showMessageDialog(this, "Debe ingresar valores válidos");
