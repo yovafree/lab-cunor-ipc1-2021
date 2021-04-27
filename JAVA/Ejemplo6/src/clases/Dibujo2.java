@@ -18,12 +18,18 @@ public class Dibujo2 extends JPanel{
     int y=12;
     int cSize = 25;
     int posI = 45;
+    int Xsize =0;
+    int Ysize =0;
+    
     
     int[][] mat;
     
     
     public Dibujo2(int xSize, int ySize){
         this.setSize(xSize, ySize);
+        this.Xsize = xSize;
+        this.Ysize = ySize;
+        
         
         mat = new int[8][12];
         for (int i=0;i<8;i++){
@@ -37,7 +43,9 @@ public class Dibujo2 extends JPanel{
         this.mat = mat;
     }
     
+    @Override
     public void paint(Graphics g){
+        g.clearRect(0, 0, this.Xsize, this.Ysize);
         
         for(int k =0; k<y;k++){
             for(int j =0; j<x;j++){

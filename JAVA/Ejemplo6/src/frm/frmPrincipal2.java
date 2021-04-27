@@ -6,6 +6,8 @@
 package frm;
 
 import clases.Dibujo2;
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,15 +30,16 @@ public class frmPrincipal2 extends javax.swing.JFrame {
             }
         }
         
-        mat[2][2] = 1;
-        mat[2][3] = 1;
-        mat[2][4] = 1;
+        mat[2][6] = 1;
+        //mat[2][3] = 1;
+        //mat[2][4] = 1;
         
+        /*
         mat[5][2] = 2;
         mat[5][3] = 2;
         mat[5][4] = 2;
         mat[6][4] = 2;
-        
+        */
         this.jpLienzo.add(dib);
         
         dib.setMat(mat);
@@ -55,6 +58,11 @@ public class frmPrincipal2 extends javax.swing.JFrame {
         jpLienzo = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
+            }
+        });
 
         jpLienzo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -92,6 +100,77 @@ public class frmPrincipal2 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+        // TODO add your handling code here:
+        
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            JOptionPane.showMessageDialog(this,"Hola Mundo");
+        }
+        
+        switch (evt.getKeyCode()) {
+            case KeyEvent.VK_DOWN:
+                for (int j=10;j>0;j--){
+                    for (int i=0;i<8;i++){
+                        if (mat[i][j] == 1 && mat[i][j+1] == 0){
+                            mat[i][j] = 0;
+                            mat[i][j+1] = 1;
+                        }
+                    }
+                }
+                
+                dib.setMat(mat);
+                dib.repaint();
+                break;
+            case KeyEvent.VK_UP:
+                for (int j=11;j>0;j--){
+                    for (int i=0;i<8;i++){
+                        if (mat[i][j] == 1 && mat[i][j-1] == 0){
+                            mat[i][j] = 0;
+                            mat[i][j-1] = 2;
+                        }
+                        
+                        if (mat[i][j] == 2){
+                            mat[i][j] = 1;
+                        }
+                    }
+                }
+                
+                
+                dib.setMat(mat);
+                dib.repaint();
+                //JOptionPane.showMessageDialog(this,"Tecla Arriba");
+                break;
+            case KeyEvent.VK_LEFT:
+                for (int j=0;j<12;j++){
+                    for (int i=1;i<8;i++){
+                        if (mat[i][j] == 1 && mat[i-1][j] == 0){
+                            mat[i][j] = 0;
+                            mat[i-1][j] = 1;
+                        }
+                    }
+                }
+                
+                dib.setMat(mat);
+                dib.repaint();
+                break;
+            case KeyEvent.VK_RIGHT:
+                for (int j=0;j<12;j++){
+                    for (int i=6;i>=0;i--){
+                        if (mat[i][j] == 1 && mat[i+1][j] == 0){
+                            mat[i][j] = 0;
+                            mat[i+1][j] = 1;
+                        }
+                    }
+                }
+                
+                dib.setMat(mat);
+                dib.repaint();
+                break;
+            default:
+                break;
+        }
+    }//GEN-LAST:event_formKeyPressed
 
     /**
      * @param args the command line arguments
